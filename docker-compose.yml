@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  db:
+    container_name: db-cer2usm
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db-data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: cer2usm_db
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: laravel1234
+    networks:
+      - net-cer2usm
+  web:
+    container_name: cer2usm-web
+    depends_on:
+      - db
+    ports:
+      - "8084:80"
+    volumes:
+      - "./web:/var/www/html"
+      - "./httpd.conf:/etc/httpd/conf/httpd.conf"
+    image: laravel-php8
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - net-cer2usm
+networks:
+  net-cer2usm:
+    
