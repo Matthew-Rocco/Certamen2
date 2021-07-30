@@ -5,7 +5,7 @@
     <div class="row mt-5">
         <div class="col-12 col-md-6 col-lg-5 mx-auto">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-info">
                     <span>Registro de Lectura</span>
                 </div>
                 <div class="card-body">

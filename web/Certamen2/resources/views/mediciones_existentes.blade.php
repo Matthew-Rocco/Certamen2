@@ -4,7 +4,7 @@
     <div class="row mt-2">
         <div class="col-12 col-md-6 col-lg-5 mx-auto">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-info">
                     <span>Filtrar</span>
                 </div>
                 <div class="card-body">
